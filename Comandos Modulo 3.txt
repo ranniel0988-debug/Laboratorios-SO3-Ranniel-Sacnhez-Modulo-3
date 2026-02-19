@@ -1,0 +1,52 @@
+==================================
+Practica 1
+==================================
+
+sudo nano /etc/default/grub
+sudo upgrade-grub
+
+
+passwd root
+sync
+reboot -r
+==================================
+Practica 2
+==================================
+printer-driver
+nano backup.sh
+sudo chmod +x backup.sh
+./backup.sh
+nano ifconfig.sh
+sudo chmod +x ifconfig.sh
+./ifconfig.sh
+history
+
+==================================
+Practica 3
+==================================
+
+ip ad
+sudo apt install ss
+sudo apt install ss?
+sudo systemctl status ssh
+sudo systemctl start ssh
+sudo systemctl status ssh
+ip ad
+pwd
+cd Desktop
+mkdir pruebassh
+pwd
+sudo systemctl enable ssh
+sudo systemctl status ssh
+exit
+mkdir -p ~/.ssh
+ls -a
+ls
+ls -a
+nano ~/.ssh/authorized_keys
+exit
+history
+
+
+
+
