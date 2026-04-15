@@ -1,5 +1,9 @@
 ==================================
-Practica 1
+Practica 1:
+
+Configure el menu de Grub para que el tiempo de esperaen el que muestra el menu sea de 20 Segundos (Mostrar el resultado)
+Muestre algun metodo de recuperacion si se me ha olvidado la contrasena del usuario root
+
 ==================================
 #cmabiar el time out del siguiente archivo para que le timepo de espara enel menu grub sea mayor
 
@@ -14,7 +18,10 @@ passwd root
 sync
 reboot -r
 ==================================
-Practica 2
+Practica 2:
+
+Crear un script que haga un backup creando un comprimido utilizando TAR de la carpeta /home/(tu_usuario). el nombre del archivo debe de tener la fecha y la hora actual en formato dd-mm-yyyy:hh:mm
+Crear un script que copie el resultado del comando ifconfig en un archivo en el escritorio. El script debe de preguntar cual nombre desea ponerle al archivo y crear el archivo con el nombre provisto
 ==================================
 nano backup.sh
 #dentro de este archivo pegar o crear el script
@@ -52,7 +59,14 @@ sudo chmod +x ifconfig.sh
 history
 
 ==================================
-Practica 3
+Practica 3:
+
+Configure su VM server en modo Bridge y valide que desde su maquina host de windows pueda alcanzarla via ping
+habilite el servicio de ssh y pruebde conectandose desde su maquina host utilizando su usuario y contrasena
+En su maquina Host (windows) genere un par de llaves (publica-privada) especifique el destino donde se guardaran las llaves y en la parte de paraphase, dejarlo en blanco.
+copie la llave publica generada al servidor 
+realize la prueba intentando conectarse via ssh nuevamente desde la maquina host (windows) hasta la VM linux, si la practica fue realizada de forma correcta, debe de entrar de forma automatica sin solicitar credenciales
+
 ==================================
 
 ip ad
@@ -68,7 +82,7 @@ pwd
 sudo systemctl enable ssh
 sudo systemctl status ssh
 exit
-#crear las maquinas rsa en windows
+#crear las claves rsa en windows
 #en windows "ssh-keygen -t rsa -b 4096"
 notepad mas la ruta de la llave pubica
 
