@@ -1,10 +1,14 @@
 ==================================
 Practica 1
 ==================================
+#cmabiar el time out del siguiente archivo para que le timepo de espara enel menu grub sea mayor
 
 sudo nano /etc/default/grub
 sudo upgrade-grub
 
+
+#pulsar la e en el menu grub
+#en la linea que empice por linux al final colocar "rw int=/bin/bash" y precionar ctrl + x
 
 passwd root
 sync
@@ -12,11 +16,37 @@ reboot -r
 ==================================
 Practica 2
 ==================================
-printer-driver
 nano backup.sh
+#dentro de este archivo pegar o crear el script
+
+#!/bin/bash
+
+USUARIO=$(whoami)
+
+FECHA=$(date +"%d-%m-%Y_%H.%M")
+NOMBRE_ARCHIVO="backup_${USUARIO}_${FECHA}.tar.gz"
+
+tar -pczf "$NOMBRE_ARCHIVO" "/home/$USUARIO"
+
+echo "Backup creado exitosamente: $NOMBRE_ARCHIVO"
+
+#dar permisos de ejecucion
 sudo chmod +x backup.sh
+# ejecutar el script
 ./backup.sh
+
 nano ifconfig.sh
+#!/bin/bash
+
+echo "Introduce el nombre que deseas para el archivo (sin extensión):"
+read NOMBRE_USUARIO
+
+RUTA_ESCRITORIO="$HOME/Desktop"
+
+ifconfig > "${RUTA_ESCRITORIO}/${NOMBRE_USUARIO}.txt"
+
+echo "El resultado de ifconfig se ha guardado en: ${RUTA_ESCRITORIO}/${NOMBRE_USUARIO}.txt"
+
 sudo chmod +x ifconfig.sh
 ./ifconfig.sh
 history
@@ -26,8 +56,7 @@ Practica 3
 ==================================
 
 ip ad
-sudo apt install ss
-sudo apt install ss?
+sudo apt install ssh
 sudo systemctl status ssh
 sudo systemctl start ssh
 sudo systemctl status ssh
@@ -39,10 +68,16 @@ pwd
 sudo systemctl enable ssh
 sudo systemctl status ssh
 exit
+#crear las maquinas rsa en windows
+#en windows "ssh-keygen -t rsa -b 4096"
+notepad mas la ruta de la llave pubica
+
+#ahora en la maquina virtual crear un archivo de llaves ssh
 mkdir -p ~/.ssh
 ls -a
 ls
 ls -a
+#aqui dentro pegar la llave ssh
 nano ~/.ssh/authorized_keys
 exit
 history
